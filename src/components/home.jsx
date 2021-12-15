@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import pic from "../images/img_1.jpg";
-import pic1 from "../images/img_2.jpg";
-import pic2 from "../images/images.jpg";
+import Footer from "../components/footer";
+import Employee from "../images/employee.jpg";
+import Help from "../images/help.jpg";
+import Needy from "../images/need2jpg.jpg";
+import Pic from "../images/img_1.jpg";
+import Pic1 from "../images/img_2.jpg";
+import Pic2 from "../images/images.jpg";
+import { Link } from "react-router-dom";
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className="container-fluid  bg-dark ">
+        <div className="container-fluid bg-dark ">
           <div
             id="carouselExampleFade"
             class="carousel slide carousel-fade opacity-50"
@@ -14,11 +19,11 @@ class Home extends React.Component {
           >
             <div class="carousel-inner pt-5 padding 20px">
               <div class="carousel-item active mx auto" data-bs-interval="1000">
-                <img src={pic} class="rounded w-90" height="500 " alt="..." />
+                <img src={Pic} class="rounded w-90" height="500 " alt="..." />
               </div>
               <div class="carousel-item" data-bs-interval="1000">
                 <img
-                  src={pic1}
+                  src={Pic1}
                   class="rounded w-90"
                   height="500"
                   width="765"
@@ -27,7 +32,7 @@ class Home extends React.Component {
               </div>
               <div class="carousel-item" data-bs-interval="1000">
                 <img
-                  src={pic2}
+                  src={Pic2}
                   class="rounded w-90"
                   height="500"
                   width="765"
@@ -61,74 +66,76 @@ class Home extends React.Component {
             </button>
           </div>
 
-          <div class="row mt-5 s-12 ">
-            <div class="card " style={{ width: "17rem", padding: "10px" }}>
-              <img src={pic} class="card-img-top" alt="..." />
+          <div class=" row mt-5 " style={{ margin: "10px" }}>
+            <div class="card " style={{ width: "17rem", margin: "10px" }}>
+              <img src={Employee} class="card-img-top " alt="..." />
               <div class="card-body">
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  <pre>
+                    "You have two hands.
+                    <br />
+                    One to help yourself, <br />
+                    the second to help orthrs"
+                  </pre>
                 </p>
+                <a href="#" class="btn btn-primary">
+                  Employee
+                </a>
               </div>
             </div>
-            <div class="card " style={{ width: "17rem" }}>
-              <img src={pic} class="card-img-top" alt="..." />
+            <div class="card " style={{ width: "17rem", margin: "10px" }}>
+              <img src={Needy} class="card-img-top" width="200px" alt="..." />
               <div class="card-body">
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  <pre>
+                    "we can't help <br />
+                    everyone but <br />
+                    everyone can help <br />
+                    someone"
+                  </pre>
                 </p>
+                {/* <a href="#" class="btn btn-primary"> */}
+                <Link to="/needypeople" className="btn btn-primary">
+                  NeedyPeople
+                </Link>
               </div>
             </div>
-            <div class="card " style={{ width: "17rem" }}>
-              <img src={pic} class="card-img-top" alt="..." />
+            <div class="card " style={{ width: "17rem", margin: "10px" }}>
+              <img src={Pic} class="card-img-top" alt="..." />
               <div class="card-body">
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  <pre>
+                    "Don't turn away,
+                    <br />
+                    Give today!"
+                    <br />
+                    "Don't delay give today!"
+                  </pre>
                 </p>
+                <a href="#" class="btn btn-primary">
+                  Donation
+                </a>
               </div>
             </div>
-            <div class="card " style={{ width: "17rem" }}>
-              <img src={pic} class="card-img-top" alt="..." />
+            <div class="card " style={{ width: "17rem", margin: "10px" }}>
+              <img src={Help} class="card-img-top" alt="..." />
               <div class="card-body">
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  <pre>
+                    “We make a living by what
+                    <br />
+                    we get, But we make a life
+                    <br />
+                    by what we give.”
+                  </pre>
                 </p>
+                <a href="#" class="btn btn-primary">
+                  Know More
+                </a>
               </div>
             </div>
           </div>
-
-          <div class="card text-start mt-5">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="true" href="#">
-                    Active
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Link
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link">Help</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
-            </div>
-          </div>
+          <Footer />
         </div>
       </div>
     );
