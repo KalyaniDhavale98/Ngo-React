@@ -13,7 +13,7 @@ class Employee extends React.Component {
   componentDidMount() {
     console.log("componentDidMount");
     axios
-      .get(`http://localhost:8080/employee/get`)
+      .get(`http://localhost:8080/employee`)
       .then((res) => {
         console.log(res);
         this.setState({ employees: res.data });
@@ -52,12 +52,6 @@ class Employee extends React.Component {
     );
   }
 }
-// funtion to get updates from store
-const mapStateToProps = (state) => {
-  return {
-    login: state.login,
-  };
-};
-export default connect(mapStateToProps)(Employee);
 
-//export default Employee;
+// export default connect(mapStateToProps)(Employee);
+export default Employee;

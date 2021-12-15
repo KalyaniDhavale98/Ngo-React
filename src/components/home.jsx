@@ -78,9 +78,10 @@ class Home extends React.Component {
                     the second to help orthrs"
                   </pre>
                 </p>
-                <a href="#" class="btn btn-primary">
+                {/* <a href="#" class="btn btn-primary"> */}
+                <Link to="/employee" className="btn btn-primary">
                   Employee
-                </a>
+                </Link>
               </div>
             </div>
             <div class="card " style={{ width: "17rem", margin: "10px" }}>
@@ -113,7 +114,7 @@ class Home extends React.Component {
                   </pre>
                 </p>
                 <a href="#" class="btn btn-primary">
-                  Donation
+                  Donor
                 </a>
               </div>
             </div>

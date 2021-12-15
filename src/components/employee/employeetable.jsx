@@ -57,11 +57,6 @@ class EmployeeTable extends React.Component {
     );
   }
 }
-// funtion to get updates from store
-const mapStateToProps = (state) => {
-  return {
-    login: state.login,
-  };
-};
-export default connect(mapStateToProps)(EmployeeTable);
-//export default EmployeeTable;
+
+// export default connect(mapStateToProps)(EmployeeTable);
+export default EmployeeTable;

@@ -1,13 +1,13 @@
 import axios from "axios";
 import React from "react";
-class UpdateEmployee extends React.Component {
+class UpdateDonor extends React.Component {
   state = {
-    employee: {
-      employeeName: "",
-      email: "",
-      phone: "",
-      username: "",
-      password: "",
+    donor: {
+      donorName: "",
+      donorEmail: "",
+      donorPhone: "",
+      donorUsername: "",
+      donorPassword: "",
       city: "",
       state: "",
       pin: "",
@@ -16,132 +16,150 @@ class UpdateEmployee extends React.Component {
   };
   componentDidMount() {
     axios
-      .get(
-        `http://localhost:8080/employee/id/${this.props.match.params.employeeId}`
-      )
+      .get(`http://localhost:8080/donor/id/${this.props.match.params.donorId}`)
       .then((res) => {
         console.log(res.data);
-        this.setState({ employee: res.data });
+        this.setState({ donor: res.data });
       })
       .catch((err) => console.log(err));
   }
   handleChange = (event) => {
     //copying state employee object to local variable employee
-    const employee = { ...this.state.employee };
+    const donor = { ...this.state.donor };
 
     console.log(event.target.name); //name of field -fullname
     console.log(event.target.value); //value entered in the field
     //update local employee object values entered by user
-    employee[event.target.name] = event.target.value;
+    donor[event.target.name] = event.target.value;
 
     //update state object using setstate method
-    this.setState({ employee: employee });
+    this.setState({ donor: donor });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
-    const employee = {
-      employeeName: this.state.employee.employeeName,
-      email: this.state.employee.email,
-      phone: this.state.employee.phone,
-      username: this.state.employee.username,
-      password: this.state.employee.password,
+    const donor = {
+      donorName: this.state.donor.donorName,
+      donorEmail: this.state.donor.donorEmail,
+      donorPhone: this.state.donor.donorPhone,
+      donorUsername: this.state.donor.donorUsername,
+      donorPassword: this.state.donor.donorPassword,
       address: {
-        city: this.state.employee.city,
-        state: this.state.employee.state,
-        pin: this.state.employee.pin,
-        landmark: this.state.employee.landmark,
+        city: this.state.donor.city,
+        state: this.state.donor.state,
+        pin: this.state.donor.pin,
+        landmark: this.state.donor.landmark,
       },
     };
     //when user clicks on submit we have to post request to rest api
     axios
       .put(
-        `http://localhost:8080/employee/update/${this.props.match.params.employeeId}`,
-        employee
+        `http://localhost:8080/donor/update/${this.props.match.params.donorId}`,
+        donor
       )
       .then((res) => {
         console.log(res.data);
-        alert(
-          "Updated employee " +
-            this.state.employee.employeeName +
-            " successfully!"
-        );
-        this.props.history.push("/employee/get");
+        alert("Updated donor " + this.state.donor.donorName + " successfully!");
+        this.props.history.push("/donor");
       })
       .catch((err) => console.log(err));
   };
   render() {
     //object destructuring
-    const { employeeName, email, phone, username, city, state, pin, landmark } =
-      this.state.employee;
+    const {
+      donorName,
+      donorEmail,
+      donorPhone,
+      donorUsername,
+      donorPassword,
+      city,
+      state,
+      pin,
+      landmark,
+    } = this.state.donor;
 
     return (
       <div>
-        <h1>Update Employee Details</h1>
+        <h1>Update Donor Details</h1>
         <form
           onSubmit={this.handleSubmit}
           className="w-50 mx-auto shadow p-3 mb-5 bg-body rounded mt-5 "
         >
           <div className="mb-3">
-            <label htmlFor="employeeName" class="form-label">
+            <label htmlFor="donorName" class="form-label">
               Full Name
             </label>
             <input
               type="text"
               class="form-control"
-              id="employeeName"
+              id="donorName"
               aria-describedby="emailHelp"
-              value={employeeName}
-              name="employeeName"
+              value={donorName}
+              name="donorName"
               onChange={this.handleChange}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="email" class="form-label">
+            <label htmlFor="donorEmail" class="form-label">
               Email id
             </label>
             <input
               type="email"
               class="form-control"
-              id="email"
+              id="donorEmail"
               aria-describedby="emailHelp"
-              value={email}
-              name="email"
+              value={donorEmail}
+              name="donorEmail"
               onChange={this.handleChange}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="phone" class="form-label">
+            <label htmlFor="donorPhone" class="form-label">
               Phone number
             </label>
             <input
               type="tel"
               class="form-control"
-              id="phone"
+              id="donorPhone"
               aria-describedby="emailHelp"
-              value={phone}
-              name="phone"
+              value={donorPhone}
+              name="donorPhone"
               onChange={this.handleChange}
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="username" class="form-label">
+            <label htmlFor="donorUsername" class="form-label">
               User Name
             </label>
             <input
               type="text"
               class="form-control"
-              id="username"
+              id="donorUsername"
               aria-describedby="emailHelp"
-              value={username}
-              name="username"
+              value={donorUsername}
+              name="donorUsername"
               onChange={this.handleChange}
             />
           </div>
+
+          <div className="mb-3">
+            <label htmlFor="donorPassword" class="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              class="form-control"
+              id="donorPassword"
+              value={donorPassword}
+              name="donorPassword"
+              onChange={this.handleChange}
+            />
+          </div>
+
           {/* address */}
           <div className="mb-3">
             <label htmlFor="city" class="form-label">
@@ -213,4 +231,4 @@ class UpdateEmployee extends React.Component {
   }
 }
 
-export default UpdateEmployee;
+export default UpdateDonor;
