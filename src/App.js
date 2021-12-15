@@ -1,4 +1,3 @@
-
 import './App.css';
 import Nav from "./components/nav";
 import Home from "./components/home";
@@ -14,6 +13,10 @@ import Employee from './components/employee/employee';
 import AddEmployee from './components/employee/addemployee';
 import UpdateEmployee from './components/employee/updateemployee';
 import EmployeeAddress from './components/employee/employeeaddress';
+import Donor from './components/donor/donor';
+import DonorAddress from './components/donor/donoraddress';
+import AddDonor from './components/donor/adddonor';
+import UpdateDonor from './components/donor/updatedonor';
 import "bootstrap/dist/css/bootstrap.css";
 import{ Route, Switch, Redirect } from "react-router-dom";
 
@@ -35,8 +38,11 @@ function App() {
         <Route path="/employee/add" component={AddEmployee} />
         <Route path="/employee/get/address/:addressId" component={EmployeeAddress}/>
         <Route path="/employee" component={Employee} />
-
-        
+        <Route path="/donor/update/:donorId" component={UpdateDonor}/>
+        <Route path="/donor/add" component={AddDonor} />
+        <Route path="/donor/get/address/:addressId" component={DonorAddress}/> 
+        <Route path="/donor" component={Donor} />
+      
          <Redirect exact path="/" to={Home}/>
         </Switch>
     </div>

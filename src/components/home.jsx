@@ -113,9 +113,10 @@ class Home extends React.Component {
                     "Don't delay give today!"
                   </pre>
                 </p>
-                <a href="#" class="btn btn-primary">
+                {/* <a href="#" class="btn btn-primary"> */}
+                <Link to="/donor" className="btn btn-primary">
                   Donor
-                </a>
+                </Link>
               </div>
             </div>
             <div class="card " style={{ width: "17rem", margin: "10px" }}>
@@ -131,7 +132,7 @@ class Home extends React.Component {
                   </pre>
                 </p>
                 <a href="#" class="btn btn-primary">
-                  Know More
+                  Donation
                 </a>
               </div>
             </div>
