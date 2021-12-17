@@ -1,5 +1,6 @@
 import './App.css';
 import Nav from "./components/nav";
+import Login from "./components/login";
 import Home from "./components/home";
 import Admin from './components/admin';
 import About from './components/about';
@@ -17,8 +18,12 @@ import Donor from './components/donor/donor';
 import DonorAddress from './components/donor/donoraddress';
 import AddDonor from './components/donor/adddonor';
 import UpdateDonor from './components/donor/updatedonor';
+import RequestForHelp from './components/requestforhelp/requestforhelp';
+import AddRequestForHelp from './components/requestforhelp/addrequestforhelp';
+import UpdateRequestForHelp from './components/requestforhelp/updaterequestforhelp';
 import "bootstrap/dist/css/bootstrap.css";
 import{ Route, Switch, Redirect } from "react-router-dom";
+
 
 function App() {
   return (
@@ -27,6 +32,7 @@ function App() {
       <Switch>
         <Route path="/home" component={Home}/>
         <Route path="/donatenow" component={DonateNow}/>
+        <Route path="/login" component={Login} />
         <Route path="/admin" component={Admin}/>
         <Route path="/about" component={About}/>
         <Route path="/footer" component={Footer}/>
@@ -42,6 +48,10 @@ function App() {
         <Route path="/donor/add" component={AddDonor} />
         <Route path="/donor/get/address/:addressId" component={DonorAddress}/> 
         <Route path="/donor" component={Donor} />
+        <Route path="/request/update/:requestId" component={UpdateRequestForHelp}/>
+        <Route path="/request/add" component={AddRequestForHelp}/>
+        {/* <Route path="/request/update/:requestId" component={UpdateRequestForHelp}/> */}
+        <Route path="/requestforhelp" component={RequestForHelp}/>
       
          <Redirect exact path="/" to={Home}/>
         </Switch>

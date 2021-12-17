@@ -37,10 +37,13 @@ class DonorTable extends React.Component {
                   >
                     Update
                   </Link>
+                  <Link to={`/donatenow`} className="btn btn-primary">
+                    Donate now
+                  </Link>
 
                   <button
                     className="btn btn-danger"
-                    onClick={() => this.handleDelete(s.donorId)}
+                    onClick={() => handleDelete(s.donorId)}
                   >
                     Delete
                   </button>

@@ -81,9 +81,6 @@ class AddDonor extends React.Component {
     };
     //when user clicks on submit we have to post request to rest api
 
-    // this.setState({ errors: this.validate() });
-    // console.log(this.state.errors);
-    // if (this.state.errors) return;
     axios
       .post("http://localhost:8080/donor/add", donor)
       .then((res) => {
