@@ -95,10 +95,10 @@ class NeedyPeople extends React.Component {
             </pre>
           </h1>
         </div>
-        <Link to="/requestforhelp" className="btn btn-success float-end ">
+        {/* <Link to="/requestforhelp" className="btn btn-success float-end ">
           <AddCardIcon />
           Request for help
-        </Link>
+        </Link> */}
         <Link to="/needypeople/add" className="btn btn-danger  float-end">
           <AddCardIcon />
           Add

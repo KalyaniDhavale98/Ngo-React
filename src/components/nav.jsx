@@ -10,7 +10,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LockOpenTwoToneIcon from "@mui/icons-material/LockOpenTwoTone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import ArticleIcon from "@mui/icons-material/Article";
 const Nav = () => {
   return (
     <div>
@@ -58,12 +57,6 @@ const Nav = () => {
                   <SupervisorAccountRoundedIcon />
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/employee">
-                  Pages
-                  <ArticleIcon />
-                </NavLink>
-              </li>
               {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/admin">
                   Register
@@ -84,13 +77,18 @@ const Nav = () => {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/employee/add">
+                    <a className="dropdown-item" href="/admin/add">
                       Admin
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/employee">
+                    <a className="dropdown-item" href="/employee/add">
                       Employee
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/donor/add">
+                      Donor
                     </a>
                   </li>
                 </ul>

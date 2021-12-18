@@ -1,5 +1,7 @@
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
+import admin from "../../images/adminh.jpg";
 import Joi from "joi-browser";
 
 class AddAdmin extends React.Component {
@@ -48,17 +50,6 @@ class AddAdmin extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("handleSubmit");
-    // const admin={
-    //     "adminUsername":this.state.admin.adminUsername,
-    //     "adminPassword":this.state.admin.adminPassword,
-    //     "login":{
-    //         "username":this.state.admin.username,
-    //       "password":this.state.admin.username,
-    //        "role":this.state.admin.role
-
-    //     }
-    // }
-    //when user clicks on submit we have to post request to rest api
 
     axios
       .post("http://localhost:8080/admin/add", this.state.admin)
@@ -79,68 +70,70 @@ class AddAdmin extends React.Component {
     const { adminUsername, adminPassword } = this.state.admin;
     const { errors, errMsg } = this.state;
     return (
-      <div className="w-50 mx-auto ">
-        <h3>Add Admin</h3>
-        {errMsg && (
-          <div className="alert alert-danger" role="alert">
-            {errMsg}
-          </div>
-        )}
-        <form
-          onSubmit={this.handleSubmit}
-          className=" shadow p-3 mb-5 bg-body rounded mt-5 "
-        >
-          <div className="mb-3">
-            <label htmlFor="adminUsername" class="form-label">
-              Username
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="adminUsername"
-              aria-describedby="emailHelp"
-              value={adminUsername}
-              name="adminUsername"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.adminUsername}</small>}
-          </div>
+      <div
+        style={{
+          backgroundImage: `url(${admin})`,
+          backgroundSize: "cover",
+          height: "650px",
+        }}
+      >
+        <div className="w-50 mx-auto ">
+          <br />
+          <br />
+          {errMsg && (
+            <div className="alert alert-danger" role="alert">
+              {errMsg}
+            </div>
+          )}
+          <form
+            onSubmit={this.handleSubmit}
+            className=" shadow p-3 mb-5 bg-body rounded mt-5 "
+          >
+            <div className="mb-3">
+              <label htmlFor="adminUsername" class="form-label">
+                Username
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="adminUsername"
+                aria-describedby="emailHelp"
+                value={adminUsername}
+                name="adminUsername"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.adminUsername}</small>}
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="adminPassword" class="form-label">
-              Password
-            </label>
-            <input
-              type="adminPassword"
-              class="form-control"
-              id="adminPassword"
-              value={adminPassword}
-              name="adminPassword"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.adminPassword}</small>}
-          </div>
-          {/* <div className="mb-3">
-            <label htmlFor="password" class="form-label">
-              Repeat Password
-            </label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              value={password}
-              name="password"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.password}</small>}
-          </div> */}
-
-          <div className="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </form>
+            <div className="mb-3">
+              <label htmlFor="adminPassword" class="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="adminPassword"
+                value={adminPassword}
+                name="adminPassword"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.adminPassword}</small>}
+            </div>
+            <div className="d-grid gap-2">
+              <button type="submit" class="btn btn-success">
+                Submit
+              </button>
+            </div>
+            <div>
+              <p>
+                Already have an account?{" "}
+                <span>
+                  <Link to="/login">Login</Link>
+                </span>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

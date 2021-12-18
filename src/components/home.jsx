@@ -6,15 +6,22 @@ import Needy from "../images/need2jpg.jpg";
 import Pic from "../images/img_1.jpg";
 import Pic1 from "../images/img_2.jpg";
 import Pic2 from "../images/images.jpg";
+import helpinghand from "../images/helpinghand.jpg";
+import hope from "../images/hope.jpg";
+import prayers from "../images/Prayers.jpg";
+import peace from "../images/peace.jpg";
+import icond from "../images/icond.jpg";
 import { Link } from "react-router-dom";
+import AddCardIcon from "@mui/icons-material/AddCard";
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <div className="container-fluid bg-dark ">
+        <div className="container-fluid   bg-dark ">
           <div
             id="carouselExampleFade"
-            class="carousel slide carousel-fade opacity-50"
+            class="carousel slide carousel-fade opacity-50 "
             data-bs-ride="carousel"
           >
             <div class="carousel-inner pt-5 padding 20px">
@@ -70,6 +77,9 @@ class Home extends React.Component {
             <div class="card " style={{ width: "17rem", margin: "10px" }}>
               <img src={Employee} class="card-img-top " alt="..." />
               <div class="card-body">
+                <div>
+                  <h4>Save Poor child</h4>
+                </div>
                 <p class="card-text">
                   <pre>
                     "You have two hands.
@@ -80,7 +90,7 @@ class Home extends React.Component {
                 </p>
                 {/* <a href="#" class="btn btn-primary"> */}
                 <Link to="/employee" className="btn btn-primary">
-                  Employee
+                  Donate Now
                 </Link>
               </div>
             </div>
@@ -97,7 +107,7 @@ class Home extends React.Component {
                 </p>
                 {/* <a href="#" class="btn btn-primary"> */}
                 <Link to="/needypeople" className="btn btn-primary">
-                  NeedyPeople
+                  Donate Now
                 </Link>
               </div>
             </div>
@@ -115,7 +125,7 @@ class Home extends React.Component {
                 </p>
                 {/* <a href="#" class="btn btn-primary"> */}
                 <Link to="/donor" className="btn btn-primary">
-                  Donor
+                  Donate Now
                 </Link>
               </div>
             </div>
@@ -132,8 +142,100 @@ class Home extends React.Component {
                   </pre>
                 </p>
                 <a href="#" class="btn btn-primary">
-                  Donation
+                  Donate Now
                 </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="container-fluid bg-white ">
+            <img
+              src={helpinghand}
+              class="rounded w-90"
+              height="100px"
+              alt="..."
+            />
+            <br />
+            <br />
+            <h1>
+              <em>
+                <pre>
+                  We Believe That We Can Save
+                  <br />
+                  More Lifes With You
+                </pre>
+              </em>
+            </h1>
+            <strong>
+              <center className="text-success"> HELP US NOW</center>
+            </strong>
+            <div className="row">
+              <div className="col-md-3">
+                <img src={hope} class="rounded w-90" height="100px" alt="..." />
+                <br />
+                <h6>HOPE</h6>
+                <br />
+                <pre>
+                  Sometimes that's all you have
+                  <br /> when you have nothing else.
+                  <br />
+                  If you have it, you have everything.
+                </pre>
+              </div>
+              <div className="col-md-3">
+                <img
+                  src={prayers}
+                  class="rounded w-90"
+                  height="100px"
+                  alt="..."
+                />
+                <br />
+                <h6>Prayers</h6>
+                <br />
+                <pre>
+                  God understands our prayers even
+                  <br /> when we can't find the words
+                  <br /> to say them.
+                </pre>
+              </div>
+              <div className="col-md-3">
+                <img
+                  src={peace}
+                  class="rounded w-90"
+                  height="100px"
+                  alt="..."
+                />
+                <br />
+                <h6>peace</h6>
+                <br />
+                <pre>
+                  Peace cannot be kept by force,
+                  <br /> it can only be achieved by
+                  <br /> understanding.
+                </pre>
+              </div>
+              <div className="col-md-3">
+                <img
+                  src={icond}
+                  class="rounded w-90"
+                  height="100px"
+                  alt="..."
+                />
+                <br />
+                <h6>Donation</h6>
+                <br />
+                <pre>
+                  Giving is not about making <br />
+                  a donation, it is about
+                  <br />
+                  making a difference.
+                </pre>
+              </div>
+              <div className="float-center mb-3">
+                <Link to="/request/add" className=" btn btn-success btn-lg ">
+                  <AddCardIcon />
+                  Request for help
+                </Link>
               </div>
             </div>
           </div>

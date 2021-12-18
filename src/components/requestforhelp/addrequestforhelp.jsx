@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Joi from "joi-browser";
+import requestimg from "../../images/request.jpg";
 class AddRequestForHelp extends React.Component {
   state = {
     requests: {
@@ -83,84 +84,94 @@ class AddRequestForHelp extends React.Component {
       this.state.requests;
     const { errors, errMsg } = this.state;
     return (
-      <div className="w-50 mx-auto ">
-        <h3>Request for help</h3>
-        {errMsg && (
-          <div className="alert alert-danger" role="alert">
-            {errMsg}
-          </div>
-        )}
-        <form
-          onSubmit={this.handleSubmit}
-          className="shadow p-3 mb-5 bg-body rounded mt-3"
-        >
-          <div className="mb-3">
-            <label htmlFor="needyPersonName" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="needyPersonName"
-              aria-describedby="emailHelp"
-              value={needyPersonName}
-              name="needyPersonName"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.needyPersonName}</small>}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="phone"
-              aria-describedby="emailHelp"
-              value={phone}
-              name="phone"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.phone}</small>}
-          </div>
+      <div
+        style={{
+          backgroundImage: `url(${requestimg})`,
+          backgroundSize: "cover",
+          height: "650px",
+        }}
+      >
+        <div className="w-50 mx-auto ">
+          <br />
+          <br />
+          <h3>Request for help</h3>
+          {errMsg && (
+            <div className="alert alert-danger" role="alert">
+              {errMsg}
+            </div>
+          )}
+          <form
+            onSubmit={this.handleSubmit}
+            className="shadow p-3 mb-5 bg-body rounded mt-3"
+          >
+            <div className="mb-3">
+              <label htmlFor="needyPersonName" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="needyPersonName"
+                aria-describedby="emailHelp"
+                value={needyPersonName}
+                name="needyPersonName"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.needyPersonName}</small>}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="phone" className="form-label">
+                Phone
+              </label>
+              <input
+                type="tel"
+                className="form-control"
+                id="phone"
+                aria-describedby="emailHelp"
+                value={phone}
+                name="phone"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.phone}</small>}
+            </div>
 
-          <div className="mb-3">
-            <select
-              className="form-select text-center"
-              aria-label="Default select example"
-              value={this.item}
-              name="item"
-              onChange={this.handleChange}
-            >
-              <option selected>Select type</option>
-              <option value="CLOTHS">CLOTHS</option>
-              <option value="BOOKS">BOOKS</option>
-              <option value="EDIBLE">EDIBLE</option>
-              <option value="OTHER">OTHER</option>
-            </select>
-            {this.errors && <small>{this.errors.item}</small>}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="needyPersonName" className="form-label">
-              distribution status
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id=" distributionstatus"
-              aria-describedby="emailHelp"
-              value={distributionstatus}
-              name=" distributionstatus"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </form>
+            <div className="mb-3">
+              <select
+                className="form-select text-center"
+                aria-label="Default select example"
+                value={this.item}
+                name="item"
+                onChange={this.handleChange}
+              >
+                <option selected>Select type</option>
+                <option value="CLOTHS">CLOTHS</option>
+                <option value="BOOKS">BOOKS</option>
+                <option value="EDIBLE">EDIBLE</option>
+                <option value="OTHER">OTHER</option>
+              </select>
+              {this.errors && <small>{this.errors.item}</small>}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="needyPersonName" className="form-label">
+                distribution status
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id=" distributionstatus"
+                aria-describedby="emailHelp"
+                value={distributionstatus}
+                name=" distributionstatus"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
