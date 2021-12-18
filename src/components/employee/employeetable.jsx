@@ -40,15 +40,19 @@ class EmployeeTable extends React.Component {
                   >
                     Update
                   </Link>
-
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(s.employeeId)}
-                  >
-                    Delete
-                  </button>
                 </td>
-                {/* )} */}
+
+                {this.props.login.loggedIn &&
+                  this.props.login.role === "admin" && (
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleDelete(s.employeeId)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  )}
               </tr>
             ))}
           </tbody>
@@ -57,6 +61,11 @@ class EmployeeTable extends React.Component {
     );
   }
 }
-
-// export default connect(mapStateToProps)(EmployeeTable);
-export default EmployeeTable;
+// funtion to get updates from store
+const mapStateToProps = (state) => {
+  return {
+    login: state.login,
+  };
+};
+export default connect(mapStateToProps)(EmployeeTable);
+//export default EmployeeTable;

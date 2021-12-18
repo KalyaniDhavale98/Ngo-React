@@ -64,14 +64,39 @@ const Nav = () => {
                   <ArticleIcon />
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/admin">
                   Register
                   <HowToRegIcon />
                 </NavLink>
+              </li> */}
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Register
+                  <HowToRegIcon />
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a className="dropdown-item" href="/employee/add">
+                      Admin
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/employee">
+                      Employee
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/admin">
+                <NavLink className="nav-link" to="/login">
                   Login
                   <LockOpenTwoToneIcon />
                 </NavLink>

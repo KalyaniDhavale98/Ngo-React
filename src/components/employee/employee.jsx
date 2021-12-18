@@ -53,5 +53,12 @@ class Employee extends React.Component {
   }
 }
 
-// export default connect(mapStateToProps)(Employee);
-export default Employee;
+// funtion to get updates from store
+const mapStateToProps = (state) => {
+  return {
+    login: state.login,
+  };
+};
+export default connect(mapStateToProps)(Employee);
+
+//export default Employee;

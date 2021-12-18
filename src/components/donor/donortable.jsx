@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { connect } from "react-redux";
 class DonorTable extends React.Component {
   render() {
     const { donors, handleDelete } = this.props;
@@ -14,6 +14,9 @@ class DonorTable extends React.Component {
               <th>DonorEmail</th>
               <th>DonorPhone</th>
               <th>DonorUsername</th>
+              {this.props.login.loggedIn &&
+                this.props.login.role === "admin" &&
+                this.props.login.role === "employee" && <th>Actions</th>}
             </tr>
           </thead>
           <tbody>
@@ -24,6 +27,7 @@ class DonorTable extends React.Component {
                 <td>{s.donorEmail}</td>
                 <td>{s.donorPhone}</td>
                 <td>{s.donorUsername}</td>
+
                 <td>
                   <Link
                     to={`/donor/get/address/${s.address.addressId}`}
@@ -31,23 +35,25 @@ class DonorTable extends React.Component {
                   >
                     Address Info
                   </Link>
-                  <Link
-                    to={`/donor/update/${s.donorId}`}
-                    className="btn btn-primary"
-                  >
-                    Update
-                  </Link>
-                  <Link to={`/donatenow`} className="btn btn-primary">
-                    Donate now
-                  </Link>
-
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(s.donorId)}
-                  >
-                    Delete
-                  </button>
                 </td>
+                <Link
+                  to={`/donor/update/${s.donorId}`}
+                  className="btn btn-primary"
+                >
+                  Update
+                </Link>
+                {this.props.login.loggedIn &&
+                  this.props.login.role === "admin" &&
+                  this.props.login.role === "employee" && (
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleDelete(s.donorId)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  )}
               </tr>
             ))}
           </tbody>
@@ -56,5 +62,10 @@ class DonorTable extends React.Component {
     );
   }
 }
-
-export default DonorTable;
+// funtion to get updates from store
+const mapStateToProps = (state) => {
+  return {
+    login: state.login,
+  };
+};
+export default connect(mapStateToProps)(DonorTable);

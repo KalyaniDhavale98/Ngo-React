@@ -17,7 +17,7 @@ class AddEmployee extends React.Component {
     },
 
     errors: {},
-    errMsg: "Invalid input",
+    errMsg: "",
   };
   //validate 2nd step
   //define schema to validate input field values
@@ -112,7 +112,7 @@ class AddEmployee extends React.Component {
     const { errors, errMsg } = this.state;
     return (
       <div className="w-50 mx-auto ">
-        <h3>Add Employee</h3>
+        <h3>Register for employee</h3>
         {errMsg && (
           <div className="alert alert-danger" role="alert">
             {errMsg}

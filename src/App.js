@@ -2,6 +2,7 @@ import './App.css';
 import Nav from "./components/nav";
 import Login from "./components/login";
 import Home from "./components/home";
+import AddAdmin from "./components/admin/addadmin";
 import Admin from './components/admin';
 import About from './components/about';
 import DonateNow from './components/donatenow';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/home" component={Home}/>
         <Route path="/donatenow" component={DonateNow}/>
         <Route path="/login" component={Login} />
+          <Route path="/admin/add" component={AddAdmin} />
         <Route path="/admin" component={Admin}/>
         <Route path="/about" component={About}/>
         <Route path="/footer" component={Footer}/>
