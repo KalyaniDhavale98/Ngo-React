@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import DonorTable from "./donortable";
+import img1 from "../../images/back.jpg";
 import { connect } from "react-redux";
 class Donor extends React.Component {
   state = {
@@ -35,14 +36,17 @@ class Donor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
         {" "}
         <h1>Donor Details</h1>
         <div className="w-75 mx-auto">
-          <Link to="/donor/add" className="btn btn-info float-end">
-            Add
-          </Link>
-
           <DonorTable
             donors={this.state.donors}
             handleDelete={this.handleDelete}

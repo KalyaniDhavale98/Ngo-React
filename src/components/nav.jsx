@@ -7,10 +7,14 @@ import SupervisorAccountRoundedIcon from "@mui/icons-material/SupervisorAccountR
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Button from "@mui/material/Button";
 import LockOpenTwoToneIcon from "@mui/icons-material/LockOpenTwoTone";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
+import { useSelector, useDispatch } from "react-redux";
+import LogoutIcon from "@mui/icons-material/Logout";
 const Nav = () => {
+  const login = useSelector((state) => state.login);
   return (
     <div>
       <div class="w-30  mb-5px ">
@@ -93,12 +97,23 @@ const Nav = () => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
                   Login
                   <LockOpenTwoToneIcon />
                 </NavLink>
-              </li>
+              </li> */}
+              {login.loggedIn ? (
+                <Button to="/logout" component={NavLink} color="inherit">
+                  Logout
+                  <LogoutIcon />
+                </Button>
+              ) : (
+                <Button color="inherit" component={NavLink} to="/login">
+                  Login
+                  <LockOpenTwoToneIcon />
+                </Button>
+              )}
               <li className="nav-item">
                 <NavLink className="nav-link" to="about">
                   About us

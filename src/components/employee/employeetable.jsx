@@ -33,7 +33,7 @@ class EmployeeTable extends React.Component {
                     className="btn btn-primary"
                   >
                     More Info
-                  </Link>
+                  </Link>{" "}
                   <Link
                     to={`/employee/update/${s.employeeId}`}
                     className="btn btn-primary"
@@ -41,18 +41,14 @@ class EmployeeTable extends React.Component {
                     Update
                   </Link>
                 </td>
-
-                {this.props.login.loggedIn &&
-                  this.props.login.role === "admin" && (
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleDelete(s.employeeId)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  )}
+                <td>
+                  <button
+                    className="btn btn-danger "
+                    onClick={() => handleDelete(s.employeeId)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

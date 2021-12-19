@@ -14,6 +14,7 @@ class DonorTable extends React.Component {
               <th>DonorEmail</th>
               <th>DonorPhone</th>
               <th>DonorUsername</th>
+              <th>Action</th>
               {this.props.login.loggedIn &&
                 this.props.login.role === "admin" &&
                 this.props.login.role === "employee" && <th>Actions</th>}
@@ -27,21 +28,21 @@ class DonorTable extends React.Component {
                 <td>{s.donorEmail}</td>
                 <td>{s.donorPhone}</td>
                 <td>{s.donorUsername}</td>
-
                 <td>
                   <Link
                     to={`/donor/get/address/${s.address.addressId}`}
                     className="btn btn-primary"
                   >
                     Address Info
+                  </Link>{" "}
+                  <Link
+                    to={`/donor/update/${s.donorId}`}
+                    className="btn btn-primary"
+                  >
+                    Update
                   </Link>
                 </td>
-                <Link
-                  to={`/donor/update/${s.donorId}`}
-                  className="btn btn-primary"
-                >
-                  Update
-                </Link>
+
                 {this.props.login.loggedIn &&
                   this.props.login.role === "admin" &&
                   this.props.login.role === "employee" && (

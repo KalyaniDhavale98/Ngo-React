@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import img1 from "../../images/back.jpg";
 class UpdateEmployee extends React.Component {
   state = {
     employee: {
@@ -77,7 +78,14 @@ class UpdateEmployee extends React.Component {
       this.state.employee;
 
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
         <h1>Update Employee Details</h1>
         <form
           onSubmit={this.handleSubmit}

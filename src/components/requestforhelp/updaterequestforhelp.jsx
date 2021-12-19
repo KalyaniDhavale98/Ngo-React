@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import img1 from "../../images/back.jpg";
 import axios from "axios";
 
 class UpdateRequestForHelp extends React.Component {
@@ -66,74 +67,83 @@ class UpdateRequestForHelp extends React.Component {
     const { needyPersonName, phone, item, status } = this.state.requests;
 
     return (
-      <div className="w-50 mx-auto ">
-        <h3>Update request </h3>
-        <form
-          onSubmit={this.handleSubmit}
-          className="shadow p-3 mb-5 bg-body rounded mt-3"
-        >
-          <div className="mb-3">
-            <label htmlFor="needyPersonName" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="needyPersonName"
-              aria-describedby="emailHelp"
-              value={needyPersonName}
-              name="needyPersonName"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              phone
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="phone"
-              aria-describedby="emailHelp"
-              value={phone}
-              name="phone"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="item" class="form-label">
-              item
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="item"
-              aria-describedby="emailHelp"
-              value={item}
-              name="item"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="item" class="form-label">
-              status
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="status"
-              aria-describedby="emailHelp"
-              value={status}
-              name="status"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </form>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
+        <div className="w-50 mx-auto ">
+          <h3>Update request </h3>
+          <form
+            onSubmit={this.handleSubmit}
+            className="shadow p-3 mb-5 bg-body rounded mt-3"
+          >
+            <div className="mb-3">
+              <label htmlFor="needyPersonName" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="needyPersonName"
+                aria-describedby="emailHelp"
+                value={needyPersonName}
+                name="needyPersonName"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="phone" className="form-label">
+                phone
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="phone"
+                aria-describedby="emailHelp"
+                value={phone}
+                name="phone"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="item" class="form-label">
+                item
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="item"
+                aria-describedby="emailHelp"
+                value={item}
+                name="item"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="item" class="form-label">
+                status
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="status"
+                aria-describedby="emailHelp"
+                value={status}
+                name="status"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

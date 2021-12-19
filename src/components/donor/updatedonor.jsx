@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import img1 from "../../images/back.jpg";
 class UpdateDonor extends React.Component {
   state = {
     donor: {
@@ -80,7 +81,14 @@ class UpdateDonor extends React.Component {
     } = this.state.donor;
 
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
         <h1>Update Donor Details</h1>
         <form
           onSubmit={this.handleSubmit}

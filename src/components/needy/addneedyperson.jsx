@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Joi from "joi-browser";
+import child from "../../images/child1.jpg";
 import Address from "./address";
 
 class AddNeedyPerson extends React.Component {
@@ -102,132 +103,146 @@ class AddNeedyPerson extends React.Component {
       this.state.needyPerson;
     const { errors, errMsg } = this.state;
     return (
-      <div className="w-50 mx-auto ">
-        <h3>Add Needy Person</h3>
-        {errMsg && (
-          <div className="alert alert-danger" role="alert">
-            {errMsg}
-          </div>
-        )}
-        <form
-          onSubmit={this.handleSubmit}
-          className="shadow p-3 mb-5 bg-body rounded mt-3"
-        >
-          <div className="mb-3">
-            <label htmlFor="needyPersonName" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="needyPersonName"
-              aria-describedby="emailHelp"
-              value={needyPersonName}
-              name="needyPersonName"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.needyPersonName}</small>}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="familyIncome" className="form-label">
-              Family Income
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="familyIncome"
-              aria-describedby="emailHelp"
-              value={familyIncome}
-              name="familyIncome"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.familyIncome}</small>}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="phone"
-              aria-describedby="emailHelp"
-              value={phone}
-              name="phone"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.phone}</small>}
-          </div>
+      <div
+        style={{
+          backgroundImage: `url(${child})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
+        <div className="w-50 mx-auto ">
+          <br />
+          <em>
+            <h3>Add Details Here</h3>
+          </em>
+          {errMsg && (
+            <div className="alert alert-danger" role="alert">
+              {errMsg}
+            </div>
+          )}
+          <br />
+          <br />
+          <form
+            onSubmit={this.handleSubmit}
+            className="shadow p-3 mb-5 bg-body rounded mt-3"
+          >
+            <div className="mb-3">
+              <label htmlFor="needyPersonName" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="needyPersonName"
+                aria-describedby="emailHelp"
+                value={needyPersonName}
+                name="needyPersonName"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.needyPersonName}</small>}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="familyIncome" className="form-label">
+                Family Income
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="familyIncome"
+                aria-describedby="emailHelp"
+                value={familyIncome}
+                name="familyIncome"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.familyIncome}</small>}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="phone" className="form-label">
+                Phone
+              </label>
+              <input
+                type="tel"
+                className="form-control"
+                id="phone"
+                aria-describedby="emailHelp"
+                value={phone}
+                name="phone"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.phone}</small>}
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="city" class="form-label">
-              Enter the city
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="city"
-              aria-describedby="emailHelp"
-              value={city}
-              name="city"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.city}</small>}
-          </div>
+            <div className="mb-3">
+              <label htmlFor="city" class="form-label">
+                Enter the city
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                aria-describedby="emailHelp"
+                value={city}
+                name="city"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.city}</small>}
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="state" class="form-label">
-              Enter the state
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="state"
-              aria-describedby="emailHelp"
-              value={state}
-              name="state"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.state}</small>}
-          </div>
+            <div className="mb-3">
+              <label htmlFor="state" class="form-label">
+                Enter the state
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="state"
+                aria-describedby="emailHelp"
+                value={state}
+                name="state"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.state}</small>}
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="pin" class="form-label">
-              Enter pincode
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="pin"
-              aria-describedby="emailHelp"
-              value={pin}
-              name="pin"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.pin}</small>}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="landmark" class="form-label">
-              Enter landmark
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="landmark"
-              aria-describedby="emailHelp"
-              value={landmark}
-              name="landmark"
-              onChange={this.handleChange}
-            />
-            {errors && <small>{errors.landmark}</small>}
-          </div>
+            <div className="mb-3">
+              <label htmlFor="pin" class="form-label">
+                Enter pincode
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="pin"
+                aria-describedby="emailHelp"
+                value={pin}
+                name="pin"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.pin}</small>}
+            </div>
+            <div className="mb-3">
+              <label htmlFor="landmark" class="form-label">
+                Enter landmark
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="landmark"
+                aria-describedby="emailHelp"
+                value={landmark}
+                name="landmark"
+                onChange={this.handleChange}
+              />
+              {errors && <small>{errors.landmark}</small>}
+            </div>
 
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </form>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

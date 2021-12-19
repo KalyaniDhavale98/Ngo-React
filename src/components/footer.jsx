@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import { Link } from "react-router-dom";
+import GitHubIcon from "@mui/icons-material/GitHub";
 // import ArticleIcon from "@mui/icons-material/Article";
 // import { NavLink } from "react-router-dom";
 class Footer extends React.Component {
@@ -16,12 +18,43 @@ class Footer extends React.Component {
             {/* <!-- Grid container --> */}
             <div class="container p-4">
               {/* <!-- Section: Social media --> */}
-              <div class="mb-3">
-                <TwitterIcon />
-                <FacebookIcon />
-                <PinterestIcon />
-                <InstagramIcon />
-              </div>
+              <section class="mb-2">
+                <a
+                  class="btn btn-outline-light btn-floating m-1"
+                  href="https://www.facebook.com/Online/"
+                  role="button"
+                >
+                  <FacebookIcon></FacebookIcon>
+                </a>
+                <a
+                  class="btn btn-outline-light btn-floating m-1"
+                  href="https://twitter.com"
+                  role="button"
+                >
+                  <TwitterIcon></TwitterIcon>
+                </a>
+                <a
+                  class="btn btn-outline-light btn-floating m-1"
+                  href="https://instagram.com/emergency.ngo?utm_medium=copy_link"
+                  role="button"
+                >
+                  <InstagramIcon></InstagramIcon>
+                </a>
+                <a
+                  class="btn btn-outline-light btn-floating m-1"
+                  href="https://www.linkedin.com/company/Online"
+                  role="button"
+                >
+                  <LinkedInIcon></LinkedInIcon>
+                </a>
+                <a
+                  class="btn btn-outline-light btn-floating m-1"
+                  href="https://github.com/KalyaniDhavale98/Ngo-React.git"
+                  role="button"
+                >
+                  <GitHubIcon></GitHubIcon>
+                </a>
+              </section>
               {/* <!-- Section: Social media --> */}
 
               {/* <!-- Section: Form --> */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import img1 from "../../images/back.jpg";
 import axios from "axios";
 class DonorAddress extends React.Component {
   state = {
@@ -20,7 +21,14 @@ class DonorAddress extends React.Component {
   render() {
     const { address } = this.state;
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1300px",
+          height: "600px",
+        }}
+      >
         <table className="table">
           <thead>
             <tr>

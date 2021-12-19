@@ -3,7 +3,7 @@ import Nav from "./components/nav";
 import Login from "./components/login";
 import Home from "./components/home";
 import AddAdmin from "./components/admin/addadmin";
-import Admin from './components/admin';
+import Admin from './components/admin/admin';
 import About from './components/about';
 import DonateNow from './components/donatenow';
 import Footer from "./components/footer";
@@ -22,6 +22,11 @@ import UpdateDonor from './components/donor/updatedonor';
 import RequestForHelp from './components/requestforhelp/requestforhelp';
 import AddRequestForHelp from './components/requestforhelp/addrequestforhelp';
 import UpdateRequestForHelp from './components/requestforhelp/updaterequestforhelp';
+import UpdateDonationBox from "./components/donationbox/updatedonationbox";
+import DonationBox from "./components/donationbox/donationbox";
+import AddDonationBox from "./components/donationbox/adddonationbox";
+import DonateToNgo from "./components/donatetongo/donatetongo";
+import InsertBank from "./components/donatetongo/insertBank";
 import "bootstrap/dist/css/bootstrap.css";
 import{ Route, Switch, Redirect } from "react-router-dom";
 
@@ -34,6 +39,7 @@ function App() {
         <Route path="/home" component={Home}/>
         <Route path="/donatenow" component={DonateNow}/>
         <Route path="/login" component={Login} />
+
           <Route path="/admin/add" component={AddAdmin} />
         <Route path="/admin" component={Admin}/>
         <Route path="/about" component={About}/>
@@ -52,8 +58,12 @@ function App() {
         <Route path="/donor" component={Donor} />
         <Route path="/request/update/:requestId" component={UpdateRequestForHelp}/>
         <Route path="/request/add" component={AddRequestForHelp}/>
-        {/* <Route path="/request/update/:requestId" component={UpdateRequestForHelp}/> */}
         <Route path="/requestforhelp" component={RequestForHelp}/>
+        <Route path="/donationBox/update/:registrationNumber" component={UpdateDonationBox}/>
+        <Route path="/donationBox/add" component={AddDonationBox} />
+        <Route path="/donationBox" component={DonationBox} />
+        <Route path="/donatetongo" component={DonateToNgo} />
+        <Route path="/insertBank" component={InsertBank} />
       
          <Redirect exact path="/" to={Home}/>
         </Switch>

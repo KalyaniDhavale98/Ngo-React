@@ -1,4 +1,5 @@
 import React from "react";
+import img1 from "../../images/back.jpg";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 
@@ -21,7 +22,14 @@ class Address extends React.Component {
   render() {
     const { address } = this.state;
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1300px",
+          height: "600px",
+        }}
+      >
         <table className="table  table-success table-striped table-hover">
           <thead>
             <tr>

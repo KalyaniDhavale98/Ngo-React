@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import EmployeeTable from "./employeetable";
+import img1 from "../../images/back.jpg";
 import { connect } from "react-redux";
 
 class Employee extends React.Component {
@@ -40,14 +41,20 @@ class Employee extends React.Component {
   };
   render() {
     return (
-      <div className="w-75 mx-auto">
-        <Link to="/employee/add" className="btn btn-info float-end">
-          Add
-        </Link>
-        <EmployeeTable
-          employees={this.state.employees}
-          handleDelete={this.handleDelete}
-        />
+      <div
+        style={{
+          backgroundImage: `url(${img1})`,
+          backgroundSize: "cover",
+          width: "1280px",
+          height: "1000px",
+        }}
+      >
+        <div className="w-75 mx-auto">
+          <EmployeeTable
+            employees={this.state.employees}
+            handleDelete={this.handleDelete}
+          />
+        </div>
       </div>
     );
   }

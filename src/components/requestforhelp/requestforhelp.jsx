@@ -54,13 +54,13 @@ class RequestForHelp extends React.Component {
           />
 
           <div className="d-flex align-self-start mr-auto ">
-            <Link
+            {/* <Link
               to="/request/add"
               className="btn btn-info text-left float-end fixed-bottom "
               style={{ width: "100px", margin: "80px", padding: "10px" }}
             >
               Add
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

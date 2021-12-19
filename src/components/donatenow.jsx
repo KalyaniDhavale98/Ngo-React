@@ -1,16 +1,10 @@
 import React from "react";
 import axios from "axios";
-import pic1 from "../images/donationfeed.jpg";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
-import LoginIcon from "@mui/icons-material/Login";
-import IconButton from "@mui/material/IconButton";
-import LogoutIcon from "@mui/icons-material/Logout";
-import HowToRegIcon from "@mui/icons-material/HowToReg";
-import MenuIcon from "@mui/icons-material/Menu";
+import donate from "../images/donate.jpg";
+import hand from "../images/handh.png";
 import Joi from "joi-browser";
+import login from "../images/login.jpg";
+import { Link } from "react-router-dom";
 
 class DonateNow extends React.Component {
   state = {
@@ -74,40 +68,29 @@ class DonateNow extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: `url(${login})`,
+          backgroundSize: "cover",
+          width: "1250px",
+          height: "1000px",
+        }}
+      >
+        <br />
         <div>
-          <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-              <Toolbar>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  sx={{ mr: 2 }}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Button color="inherit">
-                  Register
-                  <HowToRegIcon />
-                </Button>
-                <Button color="inherit">
-                  Login <LoginIcon />
-                </Button>
-                <Button color="inherit">
-                  LogOut
-                  <LogoutIcon />
-                </Button>
-              </Toolbar>
-            </AppBar>
-          </Box>
+          <Link class="navbar-brand justify-center " to="/insertBank">
+            <img
+              src={donate}
+              class="rounded w-90 float-end"
+              height="100"
+              alt="..."
+            />
+          </Link>
         </div>
-        <div>
-          <img src={pic1} class="rounded w-90" height="500" alt="..." />
-        </div>
-        <div className="w-50 mx-auto ">
-          <h3>Add Donation</h3>
+
+        <br />
+        <br />
+        <div className="w-50 mx-auto flost-end">
           {this.errMsg && (
             <div className="alert alert-danger" role="alert">
               {this.errMsg}
@@ -118,8 +101,12 @@ class DonateNow extends React.Component {
             className="shadow p-3 mb-5 bg-body rounded mt-3"
           >
             <div className="mb-3">
+              <h3>Add Donation</h3>
+              <img src={hand} class="rounded w-90" height="100" alt="..." />
+              <br />
+              <br />
               <label htmlFor="donationAmount" className="form-label">
-                Donation Amount
+                Donation Id
               </label>
               <input
                 type="number"
@@ -132,6 +119,7 @@ class DonateNow extends React.Component {
               />
               {this.errors && <small>{this.errors.donationAmount}</small>}
             </div>
+            <br />
             <select
               className="form-select text-center"
               aria-label="Default select example"
@@ -146,6 +134,7 @@ class DonateNow extends React.Component {
               <option value="Other">Other</option>
             </select>
             {this.errors && <small>{this.errors.donationType}</small>}
+            <br />
             <div className="d-grid gap-2 mt-3">
               <button type="submit" className="btn btn-primary">
                 Submit
