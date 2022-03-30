@@ -56,17 +56,12 @@ const Nav = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/admin">
+                <NavLink className="nav-link" to="/login">
                   Admin
                   <SupervisorAccountRoundedIcon />
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/admin">
-                  Register
-                  <HowToRegIcon />
-                </NavLink>
-              </li> */}
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -115,7 +110,7 @@ const Nav = () => {
                 </Button>
               )}
               <li className="nav-item">
-                <NavLink className="nav-link" to="about">
+                <NavLink className="nav-link" to="/about">
                   About us
                 </NavLink>
               </li>

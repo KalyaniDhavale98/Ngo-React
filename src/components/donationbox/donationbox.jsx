@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import img1 from "../../images/back.jpg";
-import { Link } from "react-router-dom";
 import DonationBoxTable from "./Donationboxtable";
-import { connect } from "react-redux";
 class DonationBox extends React.Component {
   state = {
     boxes: [],

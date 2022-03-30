@@ -88,7 +88,7 @@ class AddDonor extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert("Added donor " + this.state.donor.donorName + " successfully!");
-        this.props.history.push("/donor/get");
+        this.props.history.push("/login");
       })
       .catch((err) => {
         console.log(err);

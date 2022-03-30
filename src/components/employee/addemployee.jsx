@@ -3,7 +3,6 @@ import React from "react";
 import Joi from "joi-browser";
 import { Link } from "react-router-dom";
 import employeehome from "../../images/employeehome.jpg";
-// import EmployeeAddress from "./employeeaddress";
 class AddEmployee extends React.Component {
   state = {
     employee: {
@@ -91,7 +90,7 @@ class AddEmployee extends React.Component {
             this.state.employee.employeeName +
             " successfully!"
         );
-        this.props.history.push("/employee/get");
+        this.props.history.push("/login");
       })
       .catch((err) => {
         console.log(err);

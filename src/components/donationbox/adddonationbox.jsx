@@ -38,12 +38,10 @@ class AddDonationBox extends React.Component {
     return Object.keys(errors).length === 0 ? null : errors;
   };
   handleChange = (event) => {
-    //copying state employee object to local variable employee
     const box = { ...this.state.box };
-
-    console.log(event.target.name); //name of field -fullname
+    console.log(event.target.name); //name of field
     console.log(event.target.value); //value entered in the field
-    //update local employee object values entered by user
+    //update local object values entered by user
     box[event.target.name] = event.target.value;
 
     //update state object using setstate method
@@ -64,7 +62,7 @@ class AddDonationBox extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert("Added donor " + this.state.box.ngoName + " successfully!");
-        this.props.history.push("/donationBox");
+        this.props.history.push("/home");
       })
       .catch((err) => {
         console.log(err);

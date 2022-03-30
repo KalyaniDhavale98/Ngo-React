@@ -43,18 +43,14 @@ class DonorTable extends React.Component {
                   </Link>
                 </td>
 
-                {this.props.login.loggedIn &&
-                  this.props.login.role === "admin" &&
-                  this.props.login.role === "employee" && (
-                    <td>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleDelete(s.donorId)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  )}
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(s.donorId)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

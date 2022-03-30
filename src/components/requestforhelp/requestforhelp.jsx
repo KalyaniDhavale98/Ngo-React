@@ -53,15 +53,7 @@ class RequestForHelp extends React.Component {
             handleDelete={this.handleDelete}
           />
 
-          <div className="d-flex align-self-start mr-auto ">
-            {/* <Link
-              to="/request/add"
-              className="btn btn-info text-left float-end fixed-bottom "
-              style={{ width: "100px", margin: "80px", padding: "10px" }}
-            >
-              Add
-            </Link> */}
-          </div>
+          <div className="d-flex align-self-start mr-auto "></div>
         </div>
       </div>
     );

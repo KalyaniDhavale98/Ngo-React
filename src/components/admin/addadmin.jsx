@@ -59,6 +59,7 @@ class AddAdmin extends React.Component {
           "Added admin " + this.state.admin.adminUsername + " successfully!"
         );
         // this.props.history.push("/employee/get");
+        this.props.history.push("/home");
       })
       .catch((err) => {
         console.log(err);

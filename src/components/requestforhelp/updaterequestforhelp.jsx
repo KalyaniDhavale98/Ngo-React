@@ -26,12 +26,12 @@ class UpdateRequestForHelp extends React.Component {
 
   handleChange = (event) => {
     //logic to update state object
-    //copying state employee object to local variable employee
+    //copying state request object to local variable employee
     const requests = { ...this.state.requests };
 
-    console.log(event.target.name); //name of field -fullname
+    console.log(event.target.name); //name of field
     console.log(event.target.value); //value entered in the field
-    //update local needy person object values entered by user
+    //update local request object values entered by user
     requests[event.target.name] = event.target.value;
 
     //update state object using setstate method
@@ -58,7 +58,7 @@ class UpdateRequestForHelp extends React.Component {
         alert(
           "Updated " + this.state.requests.needyPersonName + " successfully!"
         );
-        this.props.history.push("/needypeople");
+        this.props.history.push("/requestforhelp");
       })
       .catch((err) => console.log(err));
   };

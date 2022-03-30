@@ -254,7 +254,6 @@ class Home extends React.Component {
               </div>
               <div className="float-center mb-3">
                 <Link to="/request/add" className=" btn btn-success btn-lg ">
-                  <AddCardIcon />
                   Request for help
                 </Link>
               </div>

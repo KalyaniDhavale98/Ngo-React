@@ -8,7 +8,7 @@ class AddRequestForHelp extends React.Component {
       needyPersonName: "",
       phone: "",
       item: "",
-      distributionstatus: "PENDING",
+      distributionstatus: "",
     },
     errors: {},
     errMsg: "",
@@ -38,12 +38,12 @@ class AddRequestForHelp extends React.Component {
   };
 
   handleChange = (event) => {
-    //copying state employee object to local variable employee
+    //copying state request object to local variable employee
     const requests = { ...this.state.requests };
 
-    console.log(event.target.name); //name of field -fullname
+    console.log(event.target.name); //name of field
     console.log(event.target.value); //value entered in the field
-    //update local employee object values entered by user
+    //update local request object values entered by user
     requests[event.target.name] = event.target.value;
 
     //update state object using setstate method

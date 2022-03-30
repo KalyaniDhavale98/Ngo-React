@@ -36,19 +36,10 @@ class InsertBank extends React.Component {
   };
   handleChange = (event) => {
     //logic to update state object
-    // console.log(student);
-    console.log(event.target.name); // name of field - fullName
-    console.log(event.target.value); // value entered in the field -a
-    // student[fullName] = a;
-    // student.fullName = a;
-
-    // copy state student object to local variable student
+    console.log(event.target.name);
+    console.log(event.target.value);
     const bank = { ...this.state.bank };
-
-    // update local student object with values entered by user
     bank[event.target.name] = event.target.value;
-
-    // update state object using setState method
     this.setState({ bank: bank });
   };
 
@@ -61,7 +52,7 @@ class InsertBank extends React.Component {
       .then((res) => {
         console.log(res.data);
         alert("Added Bank " + this.state.bank.ngoId + " successfully!");
-        this.props.history.push("/getBank");
+        this.props.history.push("/home");
       })
       .catch((err) => {
         console.log(err);
